@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles globaux personnalisés */
+body {
+  @apply bg-gradient-to-br min-h-screen;
+}
+
+/* Utilitaires pour boutons */
+.btn-primary {
+  @apply bg-blue-600 text-white font-semibold px-4 py-2 rounded shadow hover:bg-blue-700 transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-700 font-medium px-4 py-2 rounded hover:bg-gray-300 transition-colors;
+}
+
+/* Utilitaires pour champs de saisie */
+.input {
+  @apply border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
