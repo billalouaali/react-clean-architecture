@@ -1,11 +1,20 @@
+import { useQuery } from "@tanstack/react-query";
 import type { User } from "@/domain/entities/User";
 import { getUsers as getUsersApi } from "@/infrastructure/api/userApiClient";
-import { useQuery } from "@tanstack/react-query";
+import type { GetUsersQueryResult } from "@/domain/types/GetUsersQueryResult";
+import type { UserRepository } from "@/domain/repositories/UserRepository";
 
-export function useGetUsersQuery() {
-  const { data: users, isLoading, error } = useQuery<User[], Error>({
+function useGetUsersQuery(): GetUsersQueryResult {
+  const query = useQuery<User[], Error>({
     queryKey: ["users"],
     queryFn: getUsersApi
   });
-  return { users: users ?? [], isLoading, error };
+  return {
+    ...query,
+    users: query.data ?? []
+  };
 }
+
+export const userRepository: UserRepository = {
+  useGetUsersQuery,
+};

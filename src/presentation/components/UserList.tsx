@@ -1,7 +1,7 @@
-import type { User } from "@/domain/entities/User";
+import type { UserViewModel } from "@/presentation/viewmodels/types/UserViewModel";
 
 type Props = {
-  userList: User[];
+  userList: UserViewModel[];
 };
 
 export function UserList({ userList }: Props) {

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
-import { UserListPage } from '@/presentation/pages/UserListPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { UserListPage } from '@/presentation/pages/UserListPage';
 
 import '@/index.css';
 
